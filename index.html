@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>S15 Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              s15: {
+                900: '#0f172a', // Slate 900
+                800: '#1e293b', // Slate 800
+                accent: '#06b6d4', // Cyan 500
+                glow: '#22d3ee',   // Cyan 400
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fadeIn': 'fadeIn 0.5s ease-out forwards',
+              'loading': 'loading 1.5s ease-in-out infinite',
+              'wave': 'wave 1.2s ease-in-out infinite',
+              'bar-dance': 'barDance 1s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              loading: {
+                '0%': { transform: 'translateX(-100%)' },
+                '50%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(100%)' },
+              },
+              wave: {
+                '0%, 100%': { height: '20%' },
+                '50%': { height: '100%' },
+              },
+              barDance: {
+                '0%, 100%': { transform: 'scaleY(0.3)' },
+                '50%': { transform: 'scaleY(1)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+        color: #f8fafc;
+        -webkit-tap-highlight-color: transparent;
+        overscroll-behavior-y: none; /* Prevent pull-to-refresh on mobile */
+        overflow: hidden; /* Prevent body scroll, handle in App component */
+      }
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      html {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        height: 100%;
+        overflow: hidden;
+      }
+      
+      .safe-pb {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+
+      /* Custom Voice Visualizer Styles */
+      .voice-bar {
+        width: 8px;
+        background: linear-gradient(to top, #06b6d4, #6366f1);
+        border-radius: 9999px;
+        animation: barDance 1s ease-in-out infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

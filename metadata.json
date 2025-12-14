@@ -1,0 +1,8 @@
+{
+  "name": "S15  Lite Magic ",
+  "description": "A next-generation AI assistant blending conversational fluency with real-time web grounding, inspired by ChatGPT and Perplexity.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
